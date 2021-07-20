@@ -1,0 +1,41 @@
+<h2>Flight Status</h2>
+<div class="example-header">  
+<mat-form-field appearance="fill"> 
+  <mat-label>Filter Search</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="">  
+</mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort> 
+    <ng-container matColumnDef="flightDate">  
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Flight Date </mat-header-cell>  
+      <mat-cell *matCellDef="let row"> {{row.flightScheduleDate}} </mat-cell>  
+    </ng-container>  
+  
+    <ng-container matColumnDef="flightId">  
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Flight Id </mat-header-cell>  
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>  
+    </ng-container>  
+  
+    <ng-container matColumnDef="flightCarrier">  
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Flight Carrier </mat-header-cell>  
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>  
+    </ng-container>  
+  
+    <ng-container matColumnDef="flightNumber">  
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Flight Number </mat-header-cell>  
+      <mat-cell *matCellDef="let row"> {{row.flightNumber}} </mat-cell>  
+    </ng-container>  
+
+    <ng-container matColumnDef="flightStatus">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Flight Status </mat-header-cell>  
+      <mat-cell *matCellDef="let row"> {{row.flightStatusPublicLangTransl}} </mat-cell> 
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>  
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>  
+  </mat-table>  
+  
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>  
+</div>  

@@ -1,0 +1,33 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    border-color: black;
+  }
+  
+.example-header {
+    min-height: 64px;
+    padding: 8px 24px 8px;
+  }
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+.mat-header-cell{
+    background-color: cornflowerblue;
+  }
+
+.mat-row:nth-child(even){
+   background-color: rgb(103, 214, 205);
+}
+
+.mat-cell{
+  text-align: left;
+}
+
+.mat-header-cell{
+  font-size: 14px;
+}
+  
